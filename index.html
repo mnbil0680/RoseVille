@@ -495,22 +495,39 @@
                 <!-- Filter Tabs -->
                 <div class="products__filters" role="tablist" aria-label="Product filters">
                     <button class="products__filter active" role="tab" aria-selected="true" data-filter="all"
-                        data-en="All" data-ar="الكل">All</button>
+                        data-en="🌸 All" data-ar="🌸 الكل">🌸 All</button>
                     <button class="products__filter" role="tab" aria-selected="false" data-filter="natural"
-                        data-en="Natural" data-ar="طبيعية">Natural</button>
+                        data-en="🌿 Natural" data-ar="🌿 طبيعية">🌿 Natural</button>
                     <button class="products__filter" role="tab" aria-selected="false" data-filter="artificial"
-                        data-en="Artificial" data-ar="صناعية">Artificial</button>
+                        data-en="✨ Artificial" data-ar="✨ صناعية">✨ Artificial</button>
                 </div>
 
                 <div class="products__grid">
-                    <!-- Product 1 -->
-                    <article class="product-card" data-category="natural">
+
+                    <!-- Product 1: Romantic Red Roses -->
+                    <article class="product-card" data-category="natural" style="--p-i:0">
                         <div class="product-card__img">
-                            <div class="product-card__emoji">🌹</div>
+                            <img src="assets/pexels-the-smell-of-roses.jpg" alt="Romantic red roses bouquet"
+                                class="product-card__photo" loading="lazy" decoding="async">
+                            <div class="product-card__img-overlay" aria-hidden="true"></div>
                             <span class="product-card__badge product-card__badge--natural" data-en="Natural"
                                 data-ar="طبيعية">Natural</span>
+                            <span class="product-card__tag product-card__tag--hot" data-en="Bestseller"
+                                data-ar="الأكثر مبيعاً">Bestseller</span>
+                            <button class="product-card__wishlist" aria-label="Save to wishlist" type="button">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                            </button>
                         </div>
                         <div class="product-card__body">
+                            <div class="product-card__rating" aria-label="Rating: 4.9 out of 5">
+                                <span class="product-card__stars" aria-hidden="true">★★★★★</span>
+                                <span class="product-card__rating-score">4.9</span>
+                                <span class="product-card__rating-count">(243)</span>
+                            </div>
                             <h3 class="product-card__title" data-en="Romantic Red Roses" data-ar="ورود حمراء رومانسية">
                                 Romantic Red Roses</h3>
                             <p class="product-card__desc"
@@ -526,14 +543,28 @@
                         </div>
                     </article>
 
-                    <!-- Product 2 -->
-                    <article class="product-card" data-category="natural">
+                    <!-- Product 2: Spring Tulip Delight -->
+                    <article class="product-card" data-category="natural" style="--p-i:1">
                         <div class="product-card__img">
-                            <div class="product-card__emoji">🌷</div>
+                            <img src="assets/product-natural-2.jpg" alt="Spring tulip bouquet in pink yellow and white"
+                                class="product-card__photo" loading="lazy" decoding="async">
+                            <div class="product-card__img-overlay" aria-hidden="true"></div>
                             <span class="product-card__badge product-card__badge--natural" data-en="Natural"
                                 data-ar="طبيعية">Natural</span>
+                            <button class="product-card__wishlist" aria-label="Save to wishlist" type="button">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                            </button>
                         </div>
                         <div class="product-card__body">
+                            <div class="product-card__rating" aria-label="Rating: 4.7 out of 5">
+                                <span class="product-card__stars" aria-hidden="true">★★★★★</span>
+                                <span class="product-card__rating-score">4.7</span>
+                                <span class="product-card__rating-count">(128)</span>
+                            </div>
                             <h3 class="product-card__title" data-en="Spring Tulip Delight" data-ar="بهجة توليب الربيع">
                                 Spring Tulip Delight</h3>
                             <p class="product-card__desc"
@@ -549,14 +580,30 @@
                         </div>
                     </article>
 
-                    <!-- Product 3 -->
-                    <article class="product-card" data-category="artificial">
+                    <!-- Product 3: Eternal Silk Peonies -->
+                    <article class="product-card" data-category="artificial" style="--p-i:2">
                         <div class="product-card__img">
-                            <div class="product-card__emoji">🌺</div>
+                            <img src="assets/product-artificial-1.jpg" alt="Lifelike silk peonies in a glass vase"
+                                class="product-card__photo" loading="lazy" decoding="async">
+                            <div class="product-card__img-overlay" aria-hidden="true"></div>
                             <span class="product-card__badge product-card__badge--artificial" data-en="Artificial"
                                 data-ar="صناعية">Artificial</span>
+                            <span class="product-card__tag product-card__tag--new" data-en="New"
+                                data-ar="جديد">New</span>
+                            <button class="product-card__wishlist" aria-label="Save to wishlist" type="button">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                            </button>
                         </div>
                         <div class="product-card__body">
+                            <div class="product-card__rating" aria-label="Rating: 4.8 out of 5">
+                                <span class="product-card__stars" aria-hidden="true">★★★★★</span>
+                                <span class="product-card__rating-score">4.8</span>
+                                <span class="product-card__rating-count">(97)</span>
+                            </div>
                             <h3 class="product-card__title" data-en="Eternal Silk Peonies"
                                 data-ar="فاوانيا حريرية أبدية">Eternal Silk Peonies</h3>
                             <p class="product-card__desc"
@@ -572,14 +619,29 @@
                         </div>
                     </article>
 
-                    <!-- Product 4 -->
-                    <article class="product-card" data-category="natural">
+                    <!-- Product 4: Sunshine Sunflower Mix -->
+                    <article class="product-card" data-category="natural" style="--p-i:3">
                         <div class="product-card__img">
-                            <div class="product-card__emoji">🌻</div>
+                            <img src="assets/pexels-secret-garden.jpg"
+                                alt="Bright sunflowers with greenery and wildflowers" class="product-card__photo"
+                                loading="lazy" decoding="async">
+                            <div class="product-card__img-overlay" aria-hidden="true"></div>
                             <span class="product-card__badge product-card__badge--natural" data-en="Natural"
                                 data-ar="طبيعية">Natural</span>
+                            <button class="product-card__wishlist" aria-label="Save to wishlist" type="button">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                            </button>
                         </div>
                         <div class="product-card__body">
+                            <div class="product-card__rating" aria-label="Rating: 4.6 out of 5">
+                                <span class="product-card__stars" aria-hidden="true">★★★★☆</span>
+                                <span class="product-card__rating-score">4.6</span>
+                                <span class="product-card__rating-count">(184)</span>
+                            </div>
                             <h3 class="product-card__title" data-en="Sunshine Sunflower Mix"
                                 data-ar="باقة عباد الشمس المشرقة">Sunshine Sunflower Mix</h3>
                             <p class="product-card__desc"
@@ -595,14 +657,30 @@
                         </div>
                     </article>
 
-                    <!-- Product 5 -->
-                    <article class="product-card" data-category="artificial">
+                    <!-- Product 5: Cherry Blossom Branch -->
+                    <article class="product-card" data-category="artificial" style="--p-i:4">
                         <div class="product-card__img">
-                            <div class="product-card__emoji">🌸</div>
+                            <img src="assets/product-artificial-2.jpg" alt="Stunning artificial cherry blossom branches"
+                                class="product-card__photo" loading="lazy" decoding="async">
+                            <div class="product-card__img-overlay" aria-hidden="true"></div>
                             <span class="product-card__badge product-card__badge--artificial" data-en="Artificial"
                                 data-ar="صناعية">Artificial</span>
+                            <span class="product-card__tag product-card__tag--popular" data-en="Popular"
+                                data-ar="رائج">Popular</span>
+                            <button class="product-card__wishlist" aria-label="Save to wishlist" type="button">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                            </button>
                         </div>
                         <div class="product-card__body">
+                            <div class="product-card__rating" aria-label="Rating: 4.9 out of 5">
+                                <span class="product-card__stars" aria-hidden="true">★★★★★</span>
+                                <span class="product-card__rating-score">4.9</span>
+                                <span class="product-card__rating-count">(156)</span>
+                            </div>
                             <h3 class="product-card__title" data-en="Cherry Blossom Branch" data-ar="غصن أزهار الكرز">
                                 Cherry Blossom Branch</h3>
                             <p class="product-card__desc"
@@ -618,14 +696,30 @@
                         </div>
                     </article>
 
-                    <!-- Product 6 -->
-                    <article class="product-card" data-category="artificial">
+                    <!-- Product 6: Luxury Preserved Box -->
+                    <article class="product-card" data-category="artificial" style="--p-i:5">
                         <div class="product-card__img">
-                            <div class="product-card__emoji">💐</div>
+                            <img src="assets/crystal.jpg" alt="Preserved roses in an elegant velvet box"
+                                class="product-card__photo" loading="lazy" decoding="async">
+                            <div class="product-card__img-overlay" aria-hidden="true"></div>
                             <span class="product-card__badge product-card__badge--artificial" data-en="Artificial"
                                 data-ar="صناعية">Artificial</span>
+                            <span class="product-card__tag product-card__tag--limited" data-en="Limited"
+                                data-ar="محدود">Limited</span>
+                            <button class="product-card__wishlist" aria-label="Save to wishlist" type="button">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                            </button>
                         </div>
                         <div class="product-card__body">
+                            <div class="product-card__rating" aria-label="Rating: 5.0 out of 5">
+                                <span class="product-card__stars" aria-hidden="true">★★★★★</span>
+                                <span class="product-card__rating-score">5.0</span>
+                                <span class="product-card__rating-count">(312)</span>
+                            </div>
                             <h3 class="product-card__title" data-en="Luxury Preserved Box"
                                 data-ar="صندوق الورود المحفوظة الفاخر">Luxury Preserved Box</h3>
                             <p class="product-card__desc"
@@ -640,12 +734,22 @@
                             </div>
                         </div>
                     </article>
+
                 </div>
             </div>
         </section>
 
         <!-- ===== TESTIMONIALS SECTION ===== -->
         <section class="testimonials section" id="testimonials">
+
+            <!-- Decorative floating petals -->
+            <div class="testimonials__bg" aria-hidden="true">
+                <span class="testimonials__bg-petal testimonials__bg-petal--1">🌸</span>
+                <span class="testimonials__bg-petal testimonials__bg-petal--2">🌹</span>
+                <span class="testimonials__bg-petal testimonials__bg-petal--3">🌷</span>
+                <span class="testimonials__bg-petal testimonials__bg-petal--4">🌺</span>
+            </div>
+
             <div class="container">
                 <div class="section__header">
                     <span class="section__tag" data-en="Testimonials" data-ar="التقييمات">Testimonials</span>
@@ -656,41 +760,113 @@
                         data-ar="اسمعي آراء من يثقون بـ روزفيل في أجمل لحظاتهم.">Hear from the people who trust
                         RoseVille for their most special moments.</p>
                 </div>
+
                 <div class="testimonials__grid">
-                    <article class="testimonial-card">
-                        <div class="testimonial-card__stars" aria-label="5 stars">★★★★★</div>
+
+                    <!-- Testimonial 1 -->
+                    <article class="testimonial-card" style="--t-i:0">
+                        <div class="testimonial-card__quote-mark" aria-hidden="true">
+                            <svg width="40" height="32" viewBox="0 0 40 32" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path
+                                    d="M0 32V19.556C0 8.741 6.222 2.37 18.667 0l2.666 4.444C14.37 6.074 10.815 9.481 10.074 15.111H17.778V32H0Zm22.222 0V19.556C22.222 8.741 28.444 2.37 40.889 0l2.666 4.444C36.593 6.074 33.037 9.481 32.296 15.111H40V32H22.222Z" />
+                            </svg>
+                        </div>
+                        <div class="testimonial-card__stars" aria-label="5 stars">
+                            <span class="testimonial-card__star" style="--s-i:0">★</span><span
+                                class="testimonial-card__star" style="--s-i:1">★</span><span
+                                class="testimonial-card__star" style="--s-i:2">★</span><span
+                                class="testimonial-card__star" style="--s-i:3">★</span><span
+                                class="testimonial-card__star" style="--s-i:4">★</span>
+                        </div>
                         <blockquote>
-                            <p data-en="The roses I ordered for my wife's birthday were absolutely stunning. Fresh, beautifully arranged, and delivered right on time. RoseVille exceeded all expectations!"
+                            <p data-en="The roses I ordered for my wife’s birthday were absolutely stunning. Fresh, beautifully arranged, and delivered right on time. RoseVille exceeded all expectations!"
                                 data-ar="الورود التي طلبتها لعيد ميلاد زوجتي كانت مذهلة. طازجة، منسقة بشكل جميل، وتم تسليمها في الوقت المحدد. روزفيل تجاوزت كل التوقعات!">
-                                The roses I ordered for my wife's birthday were absolutely stunning. Fresh, beautifully
+                                The roses I ordered for my wife’s birthday were absolutely stunning. Fresh, beautifully
                                 arranged, and delivered right on time. RoseVille exceeded all expectations!</p>
                         </blockquote>
                         <div class="testimonial-card__author">
-                            <div class="testimonial-card__avatar" aria-hidden="true">A</div>
-                            <div>
+                            <div class="testimonial-card__avatar" aria-hidden="true">
+                                <img src="assets/avatar/man.avif" alt="Ahmed Al-Rashidi" width="46" height="46"
+                                    loading="lazy" decoding="async">
+                            </div>
+                            <div class="testimonial-card__author-info">
                                 <strong data-en="Ahmed Al-Rashidi" data-ar="أحمد الرشيدي">Ahmed Al-Rashidi</strong>
                                 <span data-en="Loyal Customer" data-ar="عميل دائم">Loyal Customer</span>
                             </div>
+                            <span class="testimonial-card__verified" aria-label="Verified customer" title="Verified">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                    aria-hidden="true">
+                                    <path d="M9 12l2 2 4-4" />
+                                    <path
+                                        d="M12 2l2.4 1.8L17 2.5l1 2.7 2.7 1-1.2 2.6L21 11.5l-2.6 1.2.5 2.9-2.7.7-1.5 2.5L12 18l-2.7.8-1.5-2.5-2.7-.7.5-2.9L3 11.5l1.5-2.7-1.2-2.6 2.7-1L7 2.5l2.6.3L12 2Z" />
+                                </svg>
+                            </span>
                         </div>
+                        <span class="testimonial-card__petal" aria-hidden="true">🌸</span>
                     </article>
-                    <article class="testimonial-card">
-                        <div class="testimonial-card__stars" aria-label="5 stars">★★★★★</div>
+
+                    <!-- Testimonial 2 -->
+                    <article class="testimonial-card" style="--t-i:1">
+                        <div class="testimonial-card__quote-mark" aria-hidden="true">
+                            <svg width="40" height="32" viewBox="0 0 40 32" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path
+                                    d="M0 32V19.556C0 8.741 6.222 2.37 18.667 0l2.666 4.444C14.37 6.074 10.815 9.481 10.074 15.111H17.778V32H0Zm22.222 0V19.556C22.222 8.741 28.444 2.37 40.889 0l2.666 4.444C36.593 6.074 33.037 9.481 32.296 15.111H40V32H22.222Z" />
+                            </svg>
+                        </div>
+                        <div class="testimonial-card__stars" aria-label="5 stars">
+                            <span class="testimonial-card__star" style="--s-i:0">★</span><span
+                                class="testimonial-card__star" style="--s-i:1">★</span><span
+                                class="testimonial-card__star" style="--s-i:2">★</span><span
+                                class="testimonial-card__star" style="--s-i:3">★</span><span
+                                class="testimonial-card__star" style="--s-i:4">★</span>
+                        </div>
                         <blockquote>
-                            <p data-en="I used RoseVille's artificial flowers for my wedding decor and guests couldn't believe they weren't real! Incredible quality and beautiful designs."
+                            <p data-en="I used RoseVille’s artificial flowers for my wedding decor and guests couldn’t believe they weren’t real! Incredible quality and beautiful designs."
                                 data-ar="استخدمت زهور روزفيل الصناعية لديكور حفل زفافي ولم يصدق الضيوف أنها ليست حقيقية! جودة مذهلة وتصاميم جميلة.">
-                                I used RoseVille's artificial flowers for my wedding decor and guests couldn't believe
-                                they weren't real! Incredible quality and beautiful designs.</p>
+                                I used RoseVille’s artificial flowers for my wedding decor and guests couldn’t believe
+                                they weren’t real! Incredible quality and beautiful designs.</p>
                         </blockquote>
                         <div class="testimonial-card__author">
-                            <div class="testimonial-card__avatar" aria-hidden="true">S</div>
-                            <div>
+                            <div class="testimonial-card__avatar" aria-hidden="true">
+                                <img src="assets/avatar/woman.avif" alt="Sarah Mitchell" width="46" height="46"
+                                    loading="lazy" decoding="async">
+                            </div>
+                            <div class="testimonial-card__author-info">
                                 <strong data-en="Sarah Mitchell" data-ar="سارة ميتشل">Sarah Mitchell</strong>
                                 <span data-en="Event Planner" data-ar="منظمة مناسبات">Event Planner</span>
                             </div>
+                            <span class="testimonial-card__verified" aria-label="Verified customer" title="Verified">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                    aria-hidden="true">
+                                    <path d="M9 12l2 2 4-4" />
+                                    <path
+                                        d="M12 2l2.4 1.8L17 2.5l1 2.7 2.7 1-1.2 2.6L21 11.5l-2.6 1.2.5 2.9-2.7.7-1.5 2.5L12 18l-2.7.8-1.5-2.5-2.7-.7.5-2.9L3 11.5l1.5-2.7-1.2-2.6 2.7-1L7 2.5l2.6.3L12 2Z" />
+                                </svg>
+                            </span>
                         </div>
+                        <span class="testimonial-card__petal" aria-hidden="true">🌷</span>
                     </article>
-                    <article class="testimonial-card">
-                        <div class="testimonial-card__stars" aria-label="5 stars">★★★★★</div>
+
+                    <!-- Testimonial 3 -->
+                    <article class="testimonial-card" style="--t-i:2">
+                        <div class="testimonial-card__quote-mark" aria-hidden="true">
+                            <svg width="40" height="32" viewBox="0 0 40 32" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path
+                                    d="M0 32V19.556C0 8.741 6.222 2.37 18.667 0l2.666 4.444C14.37 6.074 10.815 9.481 10.074 15.111H17.778V32H0Zm22.222 0V19.556C22.222 8.741 28.444 2.37 40.889 0l2.666 4.444C36.593 6.074 33.037 9.481 32.296 15.111H40V32H22.222Z" />
+                            </svg>
+                        </div>
+                        <div class="testimonial-card__stars" aria-label="5 stars">
+                            <span class="testimonial-card__star" style="--s-i:0">★</span><span
+                                class="testimonial-card__star" style="--s-i:1">★</span><span
+                                class="testimonial-card__star" style="--s-i:2">★</span><span
+                                class="testimonial-card__star" style="--s-i:3">★</span><span
+                                class="testimonial-card__star" style="--s-i:4">★</span>
+                        </div>
                         <blockquote>
                             <p data-en="Fast delivery, amazing flowers, and fantastic customer service. I order from RoseVille every month now. They truly care about quality!"
                                 data-ar="توصيل سريع، زهور مذهلة، وخدمة عملاء رائعة. أطلب من روزفيل كل شهر الآن. إنهم يهتمون حقاً بالجودة!">
@@ -698,16 +874,32 @@
                                 every month now. They truly care about quality!</p>
                         </blockquote>
                         <div class="testimonial-card__author">
-                            <div class="testimonial-card__avatar" aria-hidden="true">L</div>
-                            <div>
+                            <div class="testimonial-card__avatar" aria-hidden="true">
+                                <img src="assets/avatar/woman2.avif" alt="Layla Hassan" width="46" height="46"
+                                    loading="lazy" decoding="async">
+                            </div>
+                            <div class="testimonial-card__author-info">
                                 <strong data-en="Layla Hassan" data-ar="ليلى حسن">Layla Hassan</strong>
                                 <span data-en="Monthly Subscriber" data-ar="مشتركة شهرية">Monthly Subscriber</span>
                             </div>
+                            <span class="testimonial-card__verified" aria-label="Verified customer" title="Verified">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                    aria-hidden="true">
+                                    <path d="M9 12l2 2 4-4" />
+                                    <path
+                                        d="M12 2l2.4 1.8L17 2.5l1 2.7 2.7 1-1.2 2.6L21 11.5l-2.6 1.2.5 2.9-2.7.7-1.5 2.5L12 18l-2.7.8-1.5-2.5-2.7-.7.5-2.9L3 11.5l1.5-2.7-1.2-2.6 2.7-1L7 2.5l2.6.3L12 2Z" />
+                                </svg>
+                            </span>
                         </div>
+                        <span class="testimonial-card__petal" aria-hidden="true">🌼</span>
                     </article>
+
                 </div>
             </div>
         </section>
+
+        <!-- ===== FAQ SECTION ===== -->
 
         <!-- ===== CONTACT SECTION ===== -->
         <section class="contact section" id="contact">

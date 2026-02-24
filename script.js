@@ -388,6 +388,37 @@
         cards.forEach(c => observer.observe(c));
     }
 
+    // ───── Product Cards: wishlist toggle ─────
+    function setupProductCards() {
+        const cards = $$('.product-card');
+        if (!cards.length) return;
+
+        // Wishlist heart toggle
+        cards.forEach(card => {
+            const btn = card.querySelector('.product-card__wishlist');
+            if (!btn) return;
+
+            // Restore saved state from sessionStorage (per page session)
+            const productTitle = card.querySelector('.product-card__title');
+            const key = 'wishlist-' + (productTitle ? productTitle.textContent.trim() : Math.random());
+
+            try {
+                if (sessionStorage.getItem(key) === '1') btn.classList.add('is-saved');
+            } catch (_) { }
+
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const saved = btn.classList.toggle('is-saved');
+                btn.setAttribute('aria-label', saved ? 'Remove from wishlist' : 'Save to wishlist');
+                // Heartbeat pop animation
+                btn.style.transform = 'scale(1.35)';
+                setTimeout(() => { btn.style.transform = ''; }, 220);
+                try { sessionStorage.setItem(key, saved ? '1' : '0'); } catch (_) { }
+            });
+        });
+    }
+
     function init() {
         // Restore language preference
         try {
@@ -399,6 +430,7 @@
 
         setupReveal();
         setupAboutCards();
+        setupProductCards();
         setupHeroSlider();
         setupRotatingText();
         onScroll();
