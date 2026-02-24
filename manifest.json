@@ -1,0 +1,16 @@
+{
+  "name": "RoseVille",
+  "short_name": "RoseVille",
+  "description": "Premium natural and artificial flower bouquets for every occasion.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#b5465a",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
