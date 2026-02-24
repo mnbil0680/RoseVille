@@ -227,7 +227,7 @@
 
     // ───── Scroll Reveal (Intersection Observer) ─────
     function setupReveal() {
-        const revealElements = $$('.about__card, .product-card, .testimonial-card, .contact__info-card, .section__header');
+        const revealElements = $$('.about__card, .product-card, .testimonial-card, .faq__item, .contact__info-card, .section__header');
 
         revealElements.forEach(el => el.classList.add('reveal'));
 
@@ -419,6 +419,68 @@
         });
     }
 
+    // ───── FAQ Accordion ─────
+    function setupFaq() {
+        const items = $$('.faq__item');
+        if (!items.length) return;
+
+        function openItem(item) {
+            const btn = item.querySelector('.faq__question');
+            const answer = item.querySelector('.faq__answer');
+            item.classList.add('is-open');
+            btn.setAttribute('aria-expanded', 'true');
+            answer.setAttribute('aria-hidden', 'false');
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+
+        function closeItem(item) {
+            const btn = item.querySelector('.faq__question');
+            const answer = item.querySelector('.faq__answer');
+            item.classList.remove('is-open');
+            btn.setAttribute('aria-expanded', 'false');
+            answer.setAttribute('aria-hidden', 'true');
+            answer.style.maxHeight = null;
+        }
+
+        items.forEach(item => {
+            const btn = item.querySelector('.faq__question');
+            if (!btn) return;
+
+            btn.addEventListener('click', () => {
+                const isOpen = item.classList.contains('is-open');
+                // Close all
+                items.forEach(i => closeItem(i));
+                // Toggle open if it was closed
+                if (!isOpen) openItem(item);
+            });
+
+            // Keyboard: Enter / Space already fires click on <button>
+            // Support Home/End/ArrowUp/ArrowDown within the list
+            btn.addEventListener('keydown', (e) => {
+                const list = Array.from(items);
+                const idx = list.indexOf(item);
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    const next = list[idx + 1];
+                    if (next) next.querySelector('.faq__question').focus();
+                } else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    const prev = list[idx - 1];
+                    if (prev) prev.querySelector('.faq__question').focus();
+                } else if (e.key === 'Home') {
+                    e.preventDefault();
+                    list[0].querySelector('.faq__question').focus();
+                } else if (e.key === 'End') {
+                    e.preventDefault();
+                    list[list.length - 1].querySelector('.faq__question').focus();
+                }
+            });
+        });
+
+        // Open first item by default once revealed
+        requestAnimationFrame(() => openItem(items[0]));
+    }
+
     function init() {
         // Restore language preference
         try {
@@ -431,6 +493,7 @@
         setupReveal();
         setupAboutCards();
         setupProductCards();
+        setupFaq();
         setupHeroSlider();
         setupRotatingText();
         onScroll();
