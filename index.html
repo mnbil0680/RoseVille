@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 <head>
@@ -46,18 +46,44 @@
 
             <!-- Navigation -->
             <nav class="nav" id="nav" aria-label="Main navigation">
+                <!-- Mobile-only decorative header -->
+                <div class="nav__mobile-header" aria-hidden="true">
+                    <span class="nav__mobile-petal">🌹</span>
+                    <span class="nav__mobile-petal">🌸</span>
+                    <span class="nav__mobile-petal">🌷</span>
+                    <span class="nav__mobile-petal">🌺</span>
+                    <span class="nav__mobile-petal">🌼</span>
+                </div>
                 <ul class="nav__list">
                     <li class="nav__item" style="--i:0"><a href="#hero" class="nav__link active" data-en="Home"
-                            data-ar="الرئيسية">Home</a></li>
+                            data-ar="الرئيسية">
+                            <span class="nav__link-icon" aria-hidden="true">🏡</span>
+                            <span data-en="Home" data-ar="الرئيسية">Home</span>
+                        </a></li>
                     <li class="nav__item" style="--i:1"><a href="#about" class="nav__link" data-en="About"
-                            data-ar="من نحن">About</a></li>
+                            data-ar="من نحن">
+                            <span class="nav__link-icon" aria-hidden="true">🌿</span>
+                            <span data-en="About" data-ar="من نحن">About</span>
+                        </a></li>
                     <li class="nav__item" style="--i:2"><a href="#products" class="nav__link" data-en="Products"
-                            data-ar="المنتجات">Products</a></li>
+                            data-ar="المنتجات">
+                            <span class="nav__link-icon" aria-hidden="true">💐</span>
+                            <span data-en="Products" data-ar="المنتجات">Products</span>
+                        </a></li>
                     <li class="nav__item" style="--i:3"><a href="#testimonials" class="nav__link" data-en="Reviews"
-                            data-ar="التقييمات">Reviews</a></li>
+                            data-ar="التقييمات">
+                            <span class="nav__link-icon" aria-hidden="true">⭐</span>
+                            <span data-en="Reviews" data-ar="التقييمات">Reviews</span>
+                        </a></li>
                     <li class="nav__item" style="--i:4"><a href="#contact" class="nav__link" data-en="Contact"
-                            data-ar="تواصل معنا">Contact</a></li>
+                            data-ar="تواصل معنا">
+                            <span class="nav__link-icon" aria-hidden="true">✉️</span>
+                            <span data-en="Contact" data-ar="تواصل معنا">Contact</span>
+                        </a></li>
                 </ul>
+                <!-- Mobile-only CTA -->
+                <a href="#products" class="nav__mobile-cta btn btn--primary" data-en="Shop Now 🌹"
+                    data-ar="تسوق الآن 🌹">Shop Now 🌹</a>
             </nav>
 
             <!-- Header Actions -->
@@ -160,17 +186,25 @@
                     <!-- CTA Buttons -->
                     <div class="hero__cta">
                         <a href="#products" class="btn btn--primary hero__btn-primary">
+                            <!-- Bouquet icon -->
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" />
-                                <path d="M9 12l2 2 4-4" />
+                                <path d="M12 22v-8" />
+                                <path d="M12 14c0-4-3-7-6-7 0 4 2.5 7 6 7z" />
+                                <path d="M12 14c0-4 3-7 6-7 0 4-2.5 7-6 7z" />
+                                <path d="M12 14c-4 0-7-2.5-7-6 4 0 7 2.5 7 6z" />
+                                <path d="M12 14c4 0 7-2.5 7-6-4 0-7 2.5-7 6z" />
                             </svg>
                             <span data-en="Explore Bouquets" data-ar="اكتشفي باقاتنا">Explore Bouquets</span>
+                            <!-- Decorative petal ornaments (CSS animated on hover) -->
+                            <span class="hero__btn-petal hero__btn-petal--1" aria-hidden="true">🌸</span>
+                            <span class="hero__btn-petal hero__btn-petal--2" aria-hidden="true">🌹</span>
                         </a>
                         <a href="#contact" class="btn btn--outline hero__btn-outline">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                                <path d="M8 10h8M8 14h5" />
                             </svg>
                             <span data-en="Get in Touch" data-ar="تواصلي معنا">Get in Touch</span>
                         </a>
@@ -179,16 +213,19 @@
                     <!-- Stats -->
                     <div class="hero__stats">
                         <div class="hero__stat">
+                            <span class="hero__stat-ornament" aria-hidden="true">🌹</span>
                             <strong>2,500<span class="hero__stat-plus">+</span></strong>
                             <span data-en="Happy Customers" data-ar="عميلٌ سعيد">Happy Customers</span>
                         </div>
                         <div class="hero__stat-divider" aria-hidden="true"></div>
                         <div class="hero__stat">
+                            <span class="hero__stat-ornament" aria-hidden="true">🌸</span>
                             <strong>150<span class="hero__stat-plus">+</span></strong>
                             <span data-en="Unique Designs" data-ar="تصميمٌ مميّز">Unique Designs</span>
                         </div>
                         <div class="hero__stat-divider" aria-hidden="true"></div>
                         <div class="hero__stat">
+                            <span class="hero__stat-ornament" aria-hidden="true">✦</span>
                             <strong>4.9<span class="hero__stat-plus">★</span></strong>
                             <span data-en="Avg. Rating" data-ar="معدّل التقييم">Avg. Rating</span>
                         </div>
@@ -199,8 +236,13 @@
                 <!-- ==== VISUAL CONTENT==== -->
                 <div class="hero__visual">
 
-                    <!-- Decorative spinning ring -->
-                    <div class="hero__visual-ring" aria-hidden="true"></div>
+                    <!-- Decorative layered ring with orbiting petals -->
+                    <div class="hero__visual-ring" aria-hidden="true">
+                        <span class="hero__visual-ring-petal hero__visual-ring-petal--1">🌸</span>
+                        <span class="hero__visual-ring-petal hero__visual-ring-petal--2">🌹</span>
+                        <span class="hero__visual-ring-petal hero__visual-ring-petal--3">🌷</span>
+                        <span class="hero__visual-ring-petal hero__visual-ring-petal--4">🌺</span>
+                    </div>
 
                     <!-- Main showcase image + auto slider -->
                     <div class="hero__visual-main">
@@ -223,14 +265,20 @@
 
                         <!-- Fresh badge overlay -->
                         <div class="hero__visual-badge" aria-hidden="true">
+                            <svg class="hero__visual-badge-icon" width="11" height="11" viewBox="0 0 24 24"
+                                fill="currentColor" aria-hidden="true">
+                                <path
+                                    d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z" />
+                            </svg>
                             <span class="hero__visual-badge-dot"></span>
-                            <span data-en="Farm Fresh" data-ar="طازجة من المزرعة">Farm Fresh</span>
+                            <span data-en="Picked with Love" data-ar="مُختارةٌ بحُبّ">Picked with Love</span>
                         </div>
 
                         <!-- Rating pill overlay -->
                         <div class="hero__visual-rating" aria-hidden="true">
+                            <span class="hero__visual-rating-icon" aria-hidden="true">✦</span>
                             <span class="hero__visual-stars" aria-hidden="true">★★★★★</span>
-                            <span>4.9</span>
+                            <span class="hero__visual-rating-score">4.9</span>
                         </div>
 
                         <!-- Dot / progress navigation -->
@@ -288,20 +336,55 @@
                     </div>
 
                 </div>
+
             </div>
             <a href="#about" class="hero__scroll" data-en-title="Scroll to next section"
                 data-ar-title="انتقل إلى القسم التالي" title="Scroll to next section"
                 aria-label="Scroll to next section">
-                <span data-en="Scroll Down" data-ar="مرر للأسفل">Scroll Down</span>
-                <span class="hero__scroll-mouse" aria-hidden="true">
-                    <span class="hero__scroll-wheel"></span>
+                <!-- Floating bloom icon -->
+                <span class="hero__scroll-bloom" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <ellipse cx="18" cy="10" rx="5" ry="9" fill="rgba(181,70,90,0.18)"
+                            transform="rotate(0 18 18)" />
+                        <ellipse cx="18" cy="10" rx="5" ry="9" fill="rgba(181,70,90,0.18)"
+                            transform="rotate(60 18 18)" />
+                        <ellipse cx="18" cy="10" rx="5" ry="9" fill="rgba(181,70,90,0.18)"
+                            transform="rotate(120 18 18)" />
+                        <ellipse cx="18" cy="10" rx="5" ry="9" fill="rgba(181,70,90,0.22)"
+                            transform="rotate(180 18 18)" />
+                        <ellipse cx="18" cy="10" rx="5" ry="9" fill="rgba(181,70,90,0.22)"
+                            transform="rotate(240 18 18)" />
+                        <ellipse cx="18" cy="10" rx="5" ry="9" fill="rgba(181,70,90,0.22)"
+                            transform="rotate(300 18 18)" />
+                        <circle cx="18" cy="18" r="4" fill="rgba(181,70,90,0.55)" />
+                    </svg>
                 </span>
-                <span class="hero__scroll-arrow" aria-hidden="true"></span>
+                <span data-en="Scroll Down" data-ar="مرر للأسفل">Scroll Down</span>
+                <!-- Cascading chevron arrows -->
+                <span class="hero__scroll-chevrons" aria-hidden="true">
+                    <svg class="hero__scroll-chevron hero__scroll-chevron--1" width="16" height="10" viewBox="0 0 16 10"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M1 1l7 7 7-7" />
+                    </svg>
+                    <svg class="hero__scroll-chevron hero__scroll-chevron--2" width="16" height="10" viewBox="0 0 16 10"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M1 1l7 7 7-7" />
+                    </svg>
+                </span>
             </a>
         </section>
 
         <!-- ===== ABOUT SECTION ===== -->
         <section class="about section" id="about">
+            <!-- Decorative background petals -->
+            <div class="about__bg" aria-hidden="true">
+                <span class="about__bg-petal about__bg-petal--1">🌸</span>
+                <span class="about__bg-petal about__bg-petal--2">🌹</span>
+                <span class="about__bg-petal about__bg-petal--3">🌷</span>
+                <span class="about__bg-petal about__bg-petal--4">🌺</span>
+            </div>
             <div class="container">
                 <div class="section__header">
                     <span class="section__tag" data-en="About Us" data-ar="من نحن">About Us</span>
@@ -310,42 +393,87 @@
                     <p class="section__subtitle"
                         data-en="We are passionate about flowers and committed to delivering the freshest, most beautiful arrangements for every occasion."
                         data-ar="نحن شغوفون بالزهور وملتزمون بتقديم أجمل التنسيقات وأكثرها طزاجةً لكلّ مناسبة.">We are
-                        passionate
-                        about flowers and committed to delivering the freshest, most beautiful arrangements for every
-                        occasion.</p>
+                        passionate about flowers and committed to delivering the freshest, most beautiful arrangements
+                        for every occasion.</p>
                 </div>
                 <div class="about__grid">
-                    <article class="about__card">
-                        <div class="about__icon" aria-hidden="true">🌿</div>
-                        <h3 data-en="Fresh Daily" data-ar="طازجة يومياً">Fresh Daily</h3>
-                        <p data-en="Our natural flowers are sourced fresh every morning from premium local and international farms."
-                            data-ar="زهورنا الطبيعية مصدرها طازج كل صباح من مزارع محلية ودولية فاخرة.">Our natural
-                            flowers are sourced fresh every morning from premium local and international farms.</p>
+
+                    <!-- Card 1: Fresh Daily -->
+                    <article class="about__card" style="--card-i:0">
+                        <div class="about__card-img-wrap">
+                            <img src="assets/happy.webp" alt="Fresh flowers sourced daily" class="about__card-img"
+                                loading="lazy" decoding="async">
+                            <div class="about__card-img-overlay" aria-hidden="true"></div>
+                            <span class="about__card-step" aria-hidden="true">01</span>
+                        </div>
+                        <div class="about__icon-badge" aria-hidden="true">🌿</div>
+                        <div class="about__card-body">
+                            <h3 data-en="Fresh Daily" data-ar="طازجة يومياً">Fresh Daily</h3>
+                            <p data-en="Our natural flowers are sourced fresh every morning from premium local and international farms."
+                                data-ar="زهورنا الطبيعية مصدرها طازج كل صباح من مزارع محلية ودولية فاخرة.">Our natural
+                                flowers are sourced fresh every morning from premium local and international
+                                farms.</p>
+                            <span class="about__card-bloom" aria-hidden="true">🌸</span>
+                        </div>
                     </article>
-                    <article class="about__card">
-                        <div class="about__icon" aria-hidden="true">🎨</div>
-                        <h3 data-en="Artful Design" data-ar="تصميم فني">Artful Design</h3>
-                        <p data-en="Each bouquet is crafted by expert florists who combine colors, textures, and scents into masterpieces."
-                            data-ar="كل باقة مصممة بواسطة خبراء يجمعون الألوان والقوام والعطور في تحف فنية.">Each
-                            bouquet is crafted by expert florists who combine colors, textures, and scents into
-                            masterpieces.</p>
+
+                    <!-- Card 2: Artful Design -->
+                    <article class="about__card" style="--card-i:1">
+                        <div class="about__card-img-wrap">
+                            <img src="assets/pink.jpg" alt="Artfully designed bouquet" class="about__card-img"
+                                loading="lazy" decoding="async">
+                            <div class="about__card-img-overlay" aria-hidden="true"></div>
+                            <span class="about__card-step" aria-hidden="true">02</span>
+                        </div>
+                        <div class="about__icon-badge" aria-hidden="true">🎨</div>
+                        <div class="about__card-body">
+                            <h3 data-en="Artful Design" data-ar="تصميم فني">Artful Design</h3>
+                            <p data-en="Each bouquet is crafted by expert florists who combine colors, textures, and scents into masterpieces."
+                                data-ar="كل باقة مصممة بواسطة خبراء يجمعون الألوان والقوام والعطور في تحف فنية.">Each
+                                bouquet is crafted by expert florists who combine colors, textures, and scents into
+                                masterpieces.</p>
+                            <span class="about__card-bloom" aria-hidden="true">🌷</span>
+                        </div>
                     </article>
-                    <article class="about__card">
-                        <div class="about__icon" aria-hidden="true">🚚</div>
-                        <h3 data-en="Fast Delivery" data-ar="توصيل سريع">Fast Delivery</h3>
-                        <p data-en="Same-day delivery available. We ensure your flowers arrive fresh, on time, and beautifully packaged."
-                            data-ar="توصيل في نفس اليوم متاح. نضمن وصول زهورك طازجة، في الوقت المحدد، ومغلفة بشكل جميل.">
-                            Same-day delivery available. We ensure your flowers arrive fresh, on time, and beautifully
-                            packaged.</p>
+
+                    <!-- Card 3: Fast Delivery -->
+                    <article class="about__card" style="--card-i:2">
+                        <div class="about__card-img-wrap">
+                            <img src="assets/Flower-Delivery.webp" alt="Same-day flower delivery"
+                                class="about__card-img" loading="lazy" decoding="async">
+                            <div class="about__card-img-overlay" aria-hidden="true"></div>
+                            <span class="about__card-step" aria-hidden="true">03</span>
+                        </div>
+                        <div class="about__icon-badge" aria-hidden="true">🚚</div>
+                        <div class="about__card-body">
+                            <h3 data-en="Fast Delivery" data-ar="توصيل سريع">Fast Delivery</h3>
+                            <p data-en="Same-day delivery available. We ensure your flowers arrive fresh, on time, and beautifully packaged."
+                                data-ar="توصيل في نفس اليوم متاح. نضمن وصول زهورك طازجة، في الوقت المحدد، ومغلفة بشكل جميل.">
+                                Same-day delivery available. We ensure your flowers arrive fresh, on time, and
+                                beautifully packaged.</p>
+                            <span class="about__card-bloom" aria-hidden="true">🌺</span>
+                        </div>
                     </article>
-                    <article class="about__card">
-                        <div class="about__icon" aria-hidden="true">💎</div>
-                        <h3 data-en="Premium Quality" data-ar="جودة فاخرة">Premium Quality</h3>
-                        <p data-en="Our artificial flowers are indistinguishable from real ones — lasting beauty that never wilts or fades."
-                            data-ar="زهورنا الصناعية لا يمكن تمييزها عن الحقيقية — جمال دائم لا يذبل أو يبهت.">Our
-                            artificial flowers are indistinguishable from real ones — lasting beauty that never wilts or
-                            fades.</p>
+
+                    <!-- Card 4: Premium Quality -->
+                    <article class="about__card" style="--card-i:3">
+                        <div class="about__card-img-wrap">
+                            <img src="assets/crystal.jpg" alt="Premium quality flower arrangement"
+                                class="about__card-img" loading="lazy" decoding="async">
+                            <div class="about__card-img-overlay" aria-hidden="true"></div>
+                            <span class="about__card-step" aria-hidden="true">04</span>
+                        </div>
+                        <div class="about__icon-badge" aria-hidden="true">💎</div>
+                        <div class="about__card-body">
+                            <h3 data-en="Premium Quality" data-ar="جودة فاخرة">Premium Quality</h3>
+                            <p data-en="Our artificial flowers are indistinguishable from real ones — lasting beauty that never wilts or fades."
+                                data-ar="زهورنا الصناعية لا يمكن تمييزها عن الحقيقية — جمال دائم لا يذبل أو يبهت.">Our
+                                artificial flowers are indistinguishable from real ones — lasting beauty that never
+                                wilts or fades.</p>
+                            <span class="about__card-bloom" aria-hidden="true">🌼</span>
+                        </div>
                     </article>
+
                 </div>
             </div>
         </section>
