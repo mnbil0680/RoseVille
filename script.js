@@ -6,7 +6,7 @@
     'use strict';
 
     // ───── State ─────
-    let currentLang = 'en';
+    let currentLang = 'ar';
 
     // ───── DOM Cache ─────
     const $ = (sel, ctx = document) => ctx.querySelector(sel);
@@ -227,7 +227,7 @@
 
     // ───── Scroll Reveal (Intersection Observer) ─────
     function setupReveal() {
-        const revealElements = $$('.about__card, .product-card, .testimonial-card, .faq__item, .contact__info-card, .section__header');
+        const revealElements = $$('.about__card, .product-card, .testimonial-card, .faq__item, .contact__info-card, .contact__form-panel, .contact__map, .section__header');
 
         revealElements.forEach(el => el.classList.add('reveal'));
 
@@ -485,10 +485,10 @@
         // Restore language preference
         try {
             const savedLang = localStorage.getItem('roseville-lang');
-            if (savedLang && (savedLang === 'en' || savedLang === 'ar')) {
-                setLanguage(savedLang);
-            }
-        } catch (_) { }
+            setLanguage((savedLang === 'en' || savedLang === 'ar') ? savedLang : 'ar');
+        } catch (_) {
+            setLanguage('ar');
+        }
 
         setupReveal();
         setupAboutCards();

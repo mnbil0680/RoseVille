@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
@@ -98,7 +98,7 @@
                         <path
                             d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
                     </svg>
-                    <span class="lang-toggle__text">عربي</span>
+                    <span class="lang-toggle__text">English</span>
                 </button>
                 <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
                     <span class="nav-toggle__bar"></span>
@@ -1122,6 +1122,15 @@
 
         <!-- ===== CONTACT SECTION ===== -->
         <section class="contact section" id="contact">
+
+            <!-- Decorative floating petals -->
+            <div class="contact__bg" aria-hidden="true">
+                <span class="contact__bg-petal contact__bg-petal--1">🌸</span>
+                <span class="contact__bg-petal contact__bg-petal--2">🌹</span>
+                <span class="contact__bg-petal contact__bg-petal--3">🌷</span>
+                <span class="contact__bg-petal contact__bg-petal--4">🌺</span>
+            </div>
+
             <div class="container">
                 <div class="section__header">
                     <span class="section__tag" data-en="Contact Us" data-ar="تواصل معنا">Contact Us</span>
@@ -1130,80 +1139,214 @@
                     <p class="section__subtitle"
                         data-en="Have a question, special request, or want to place a custom order? We'd love to hear from you."
                         data-ar="هل لديكِ سؤال أو طلب خاص، أو تودّين تقديم طلب مخصّص؟ يسعدنا أن نسمع منكِ.">Have a
-                        question,
-                        special request, or want to place a custom order? We'd love to hear from you.</p>
+                        question, special request, or want to place a custom order? We'd love to hear from
+                        you.</p>
                 </div>
+
                 <div class="contact__wrapper">
-                    <form class="contact__form" id="contactForm" novalidate>
-                        <div class="form__group">
-                            <label for="name" data-en="Full Name" data-ar="الاسم الكامل">Full Name</label>
-                            <input type="text" id="name" name="name" required autocomplete="name"
-                                data-en-placeholder="Enter your full name" data-ar-placeholder="أدخل اسمك الكامل"
-                                placeholder="Enter your full name">
-                        </div>
-                        <div class="form__group">
-                            <label for="email" data-en="Email Address" data-ar="البريد الإلكتروني">Email Address</label>
-                            <input type="email" id="email" name="email" required autocomplete="email"
-                                data-en-placeholder="Enter your email" data-ar-placeholder="أدخل بريدك الإلكتروني"
-                                placeholder="Enter your email">
-                        </div>
-                        <div class="form__group">
-                            <label for="phone" data-en="Phone Number" data-ar="رقم الهاتف">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" autocomplete="tel"
-                                data-en-placeholder="Enter your phone number" data-ar-placeholder="أدخل رقم هاتفك"
-                                placeholder="Enter your phone number">
-                        </div>
-                        <div class="form__group form__group--full">
-                            <label for="message" data-en="Your Message" data-ar="رسالتك">Your Message</label>
-                            <textarea id="message" name="message" rows="5" required
-                                data-en-placeholder="Tell us about your needs..."
-                                data-ar-placeholder="أخبرنا عن احتياجاتك..."
-                                placeholder="Tell us about your needs..."></textarea>
-                        </div>
-                        <button type="submit" class="btn btn--primary btn--full" data-en="Send Message"
-                            data-ar="إرسال الرسالة">Send Message</button>
-                        <div class="form__status" id="formStatus" role="alert" aria-live="polite"></div>
-                    </form>
-                    <div class="contact__info">
-                        <div class="contact__info-card">
-                            <div class="contact__info-icon" aria-hidden="true">📍</div>
+
+                    <!-- Form Panel -->
+                    <div class="contact__form-panel">
+                        <div class="contact__form-header">
+                            <span class="contact__form-bloom" aria-hidden="true">🌸</span>
                             <div>
-                                <h4 data-en="Visit Us" data-ar="زرنا">Visit Us</h4>
-                                <p data-en="123 Blossom Street, Garden District" data-ar="١٢٣ شارع الأزهار، حي الحدائق">
-                                    123 Blossom Street, Garden District</p>
+                                <h3 class="contact__form-title" data-en="Send Us a Message" data-ar="أرسلي لنا رسالة">
+                                    Send Us a Message</h3>
+                                <p class="contact__form-subtitle" data-en="We'll reply within a few hours."
+                                    data-ar="سنرد خلال ساعات قليلة.">We'll reply within a few hours.</p>
                             </div>
                         </div>
-                        <div class="contact__info-card">
-                            <div class="contact__info-icon" aria-hidden="true">📞</div>
-                            <div>
+
+                        <form class="contact__form" id="contactForm" novalidate>
+                            <div class="form__group">
+                                <label for="name" data-en="Full Name" data-ar="الاسم الكامل">Full Name</label>
+                                <div class="form__input-wrap">
+                                    <svg class="form__input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                        <circle cx="12" cy="7" r="4" />
+                                    </svg>
+                                    <input type="text" id="name" name="name" required autocomplete="name"
+                                        data-en-placeholder="Enter your full name"
+                                        data-ar-placeholder="أدخل اسمك الكامل" placeholder="Enter your full name">
+                                </div>
+                            </div>
+                            <div class="form__group">
+                                <label for="email" data-en="Email Address" data-ar="البريد الإلكتروني">Email
+                                    Address</label>
+                                <div class="form__input-wrap">
+                                    <svg class="form__input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" aria-hidden="true">
+                                        <rect x="2" y="4" width="20" height="16" rx="2" />
+                                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                                    </svg>
+                                    <input type="email" id="email" name="email" required autocomplete="email"
+                                        data-en-placeholder="Enter your email"
+                                        data-ar-placeholder="أدخل بريدك الإلكتروني" placeholder="Enter your email">
+                                </div>
+                            </div>
+                            <div class="form__group">
+                                <label for="phone" data-en="Phone Number" data-ar="رقم الهاتف">Phone Number</label>
+                                <div class="form__input-wrap">
+                                    <svg class="form__input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" aria-hidden="true">
+                                        <path
+                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.59 1.87h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.4a16 16 0 0 0 6.29 6.29l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z" />
+                                    </svg>
+                                    <input type="tel" id="phone" name="phone" autocomplete="tel"
+                                        data-en-placeholder="Enter your phone number"
+                                        data-ar-placeholder="أدخل رقم هاتفك" placeholder="Enter your phone number">
+                                </div>
+                            </div>
+                            <div class="form__group form__group--full">
+                                <label for="message" data-en="Your Message" data-ar="رسالتك">Your Message</label>
+                                <div class="form__input-wrap form__input-wrap--textarea">
+                                    <svg class="form__input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                                    </svg>
+                                    <textarea id="message" name="message" rows="5" required
+                                        data-en-placeholder="Tell us about your needs..."
+                                        data-ar-placeholder="أخبرنا عن احتياجاتك..."
+                                        placeholder="Tell us about your needs..."></textarea>
+                                </div>
+                            </div>
+                            <div class="contact__form-actions">
+                                <button type="submit" class="btn btn--primary contact__form-submit"
+                                    data-en="Send Message 🌸" data-ar="إرسال الرسالة 🌸">Send Message
+                                    🌸</button>
+                                <a href="https://wa.me/1234567890" class="btn contact__whatsapp-btn" target="_blank"
+                                    rel="noopener" data-en="Chat on WhatsApp" data-ar="تواصل عبر واتساب">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"
+                                        aria-hidden="true">
+                                        <path
+                                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+                                    </svg>
+                                    <span data-en="Chat on WhatsApp" data-ar="تواصل عبر واتساب">Chat on WhatsApp</span>
+                                </a>
+                            </div>
+                            <div class="form__status" id="formStatus" role="alert" aria-live="polite"></div>
+                        </form>
+                    </div>
+
+                    <!-- Info Sidebar -->
+                    <div class="contact__info">
+
+                        <div class="contact__info-card reveal" style="--c-i:0">
+                            <div class="contact__info-icon-badge" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                            </div>
+                            <div class="contact__info-content">
+                                <h4 data-en="Visit Us" data-ar="زرنا">Visit Us</h4>
+                                <p data-en="123 Blossom Street, Garden District" data-ar="١٢٣ شارع الأزهار، حي الحدائق">
+                                    123 Blossom Street, Garden
+                                    District</p>
+                            </div>
+                        </div>
+
+                        <div class="contact__info-card reveal" style="--c-i:1">
+                            <div class="contact__info-icon-badge" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.59 1.87h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.4a16 16 0 0 0 6.29 6.29l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z" />
+                                </svg>
+                            </div>
+                            <div class="contact__info-content">
                                 <h4 data-en="Call Us" data-ar="اتصل بنا">Call Us</h4>
                                 <p><a href="tel:+1234567890">+1 (234) 567-890</a></p>
                             </div>
                         </div>
-                        <div class="contact__info-card">
-                            <div class="contact__info-icon" aria-hidden="true">✉️</div>
-                            <div>
+
+                        <div class="contact__info-card reveal" style="--c-i:2">
+                            <div class="contact__info-icon-badge" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                                </svg>
+                            </div>
+                            <div class="contact__info-content">
                                 <h4 data-en="Email Us" data-ar="راسلنا">Email Us</h4>
                                 <p><a href="mailto:hello@roseville.com">hello@roseville.com</a></p>
                             </div>
                         </div>
-                        <div class="contact__info-card">
-                            <div class="contact__info-icon" aria-hidden="true">🕐</div>
-                            <div>
+
+                        <div class="contact__info-card reveal" style="--c-i:3">
+                            <div class="contact__info-icon-badge" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <polyline points="12 6 12 12 16 14" />
+                                </svg>
+                            </div>
+                            <div class="contact__info-content">
                                 <h4 data-en="Working Hours" data-ar="ساعات العمل">Working Hours</h4>
                                 <p data-en="Mon – Sat: 9AM – 9PM" data-ar="الإثنين – السبت: ٩ ص – ٩ م">Mon – Sat: 9AM –
                                     9PM</p>
                             </div>
                         </div>
+
+                        <!-- Decorative petal strip -->
+                        <div class="contact__petal-strip" aria-hidden="true">
+                            <span>🌸</span><span>🌷</span><span>🌹</span><span>🌸</span><span>🌺</span>
+                        </div>
+
                     </div>
                 </div>
+
+                <!-- ===== GOOGLE MAP ===== -->
+                <div class="contact__map reveal">
+                    <div class="contact__map-header">
+                        <div class="contact__map-label">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            <span data-en="Find Us on the Map" data-ar="ابحث عنّا على الخريطة">Find Us on the Map</span>
+                        </div>
+                        <a href="https://www.google.com/maps/search/flower+district/" target="_blank" rel="noopener"
+                            class="contact__map-directions" data-en="Get Directions ↗"
+                            data-ar="الحصول على الاتجاهات ↗">Get Directions ↗</a>
+                    </div>
+                    <div class="contact__map-frame-wrap">
+                        <iframe src="https://maps.google.com/maps?q=flower+district+new+york+city&output=embed&z=15"
+                            width="100%" height="360" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade" title="RoseVille Location Map"
+                            aria-label="Google Maps showing RoseVille location"></iframe>
+                    </div>
+                </div>
+
             </div>
         </section>
     </main>
 
     <!-- ===== FOOTER ===== -->
     <footer class="footer">
+
+        <!-- Decorative floating petals -->
+        <div class="footer__bg" aria-hidden="true">
+            <span class="footer__bg-petal footer__bg-petal--1">🌸</span>
+            <span class="footer__bg-petal footer__bg-petal--2">🌹</span>
+            <span class="footer__bg-petal footer__bg-petal--3">🌷</span>
+            <span class="footer__bg-petal footer__bg-petal--4">🌺</span>
+        </div>
+
+        <!-- Rose gradient top accent bar -->
+        <div class="footer__top-bar" aria-hidden="true"></div>
+
         <div class="container footer__inner">
+
+            <!-- Brand column -->
             <div class="footer__brand">
                 <a href="#" class="logo" aria-label="RoseVille Home">
                     <svg class="logo__icon" width="30" height="30" viewBox="0 0 36 36" aria-hidden="true">
@@ -1214,59 +1357,94 @@
                     </svg>
                     <span class="logo__text">RoseVille</span>
                 </a>
-                <p data-en="Bringing beauty to your doorstep with premium natural and artificial flower arrangements."
+                <p class="footer__tagline" data-en="🌹 Premium Blooms, Delivered with Love"
+                    data-ar="🌹 أزهار فاخرة تُهدى بكل محبة">🌹 Premium Blooms, Delivered with Love</p>
+                <p class="footer__brand-desc"
+                    data-en="Bringing beauty to your doorstep with premium natural and artificial flower arrangements."
                     data-ar="نُوصِل الجمال إلى بابكِ بأرقى تنسيقات الزهور الطبيعية والصناعية الفاخرة.">Bringing beauty
-                    to your
-                    doorstep with premium natural and artificial flower arrangements.</p>
+                    to your doorstep with premium natural and artificial flower arrangements.</p>
             </div>
+
+            <!-- Quick links column -->
             <div class="footer__links">
                 <h4 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
                 <ul>
-                    <li><a href="#hero" data-en="Home" data-ar="الرئيسية">Home</a></li>
-                    <li><a href="#about" data-en="About" data-ar="من نحن">About</a></li>
-                    <li><a href="#products" data-en="Products" data-ar="المنتجات">Products</a></li>
-                    <li><a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+                    <li>
+                        <a href="#hero" data-en="Home" data-ar="الرئيسية">
+                            <span class="footer__link-petal" aria-hidden="true">🌸</span>Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about" data-en="About" data-ar="من نحن">
+                            <span class="footer__link-petal" aria-hidden="true">🌷</span>About
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#products" data-en="Products" data-ar="المنتجات">
+                            <span class="footer__link-petal" aria-hidden="true">🌹</span>Products
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#faq" data-en="FAQ" data-ar="الأسئلة الشائعة">
+                            <span class="footer__link-petal" aria-hidden="true">🌺</span>FAQ
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contact" data-en="Contact" data-ar="تواصل معنا">
+                            <span class="footer__link-petal" aria-hidden="true">🌸</span>Contact
+                        </a>
+                    </li>
                 </ul>
             </div>
+
+            <!-- Social column -->
             <div class="footer__social">
                 <h4 data-en="Follow Us" data-ar="تابعنا">Follow Us</h4>
+                <p class="footer__social-hint" data-en="Stay inspired — follow our blooms ✨"
+                    data-ar="ابقي مُلهَمة — تابعي أزهارنا ✨">Stay inspired — follow our blooms ✨</p>
                 <div class="footer__social-links">
-                    <a href="#" aria-label="Instagram" class="footer__social-link">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <a href="#" aria-label="Instagram" class="footer__social-link" data-platform="instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <rect x="2" y="2" width="20" height="20" rx="5" />
                             <circle cx="12" cy="12" r="5" />
                             <circle cx="17.5" cy="6.5" r="1.5" />
                         </svg>
                     </a>
-                    <a href="#" aria-label="Facebook" class="footer__social-link">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <a href="#" aria-label="Facebook" class="footer__social-link" data-platform="facebook">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
                         </svg>
                     </a>
-                    <a href="#" aria-label="Twitter / X" class="footer__social-link">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <a href="#" aria-label="Twitter / X" class="footer__social-link" data-platform="x">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <path d="M4 4l11.733 16h4.267l-11.733-16zM4 20l6.768-6.768M20 4l-6.768 6.768" />
                         </svg>
                     </a>
-                    <a href="#" aria-label="TikTok" class="footer__social-link">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <a href="#" aria-label="TikTok" class="footer__social-link" data-platform="tiktok">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <path d="M9 12a4 4 0 104 4V4a5 5 0 005 5" />
                         </svg>
                     </a>
                 </div>
             </div>
+
         </div>
+
+        <!-- Bottom bar -->
         <div class="footer__bottom">
-            <div class="container">
-                <p data-en="© 2026 RoseVille. All rights reserved. Crafted with 🌹 love."
-                    data-ar="© ٢٠٢٦ روزفيل. جميع الحقوق محفوظة. صُنع بـ 🌹 حب.">© 2026 RoseVille. All rights reserved.
-                    Crafted with 🌹 love.</p>
+            <div class="container footer__bottom-inner">
+                <span class="footer__bottom-petals" aria-hidden="true">🌸 🌷 🌹</span>
+                <p data-en="© 2026 RoseVille · All rights reserved · Crafted with 🌹 love."
+                    data-ar="© ٢٠٢٦ روزفيل · جميع الحقوق محفوظة · صُنع بـ 🌹 حب.">
+                    © 2026 RoseVille · All rights reserved · Crafted with 🌹 love.</p>
+                <span class="footer__bottom-petals" aria-hidden="true">🌹 🌷 🌸</span>
             </div>
         </div>
+
     </footer>
 
     <!-- ===== WHATSAPP FLOATING BUTTON ===== -->
