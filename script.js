@@ -227,7 +227,7 @@
 
     // ───── Scroll Reveal (Intersection Observer) ─────
     function setupReveal() {
-        const revealElements = $$('.about__card, .product-card, .testimonial-card, .faq__item, .contact__info-card, .contact__form-panel, .contact__map, .section__header');
+        const revealElements = $$('.about__card, .product-card, .testimonials__slider, .faq__item, .contact__info-card, .contact__form-panel, .contact__map, .section__header');
 
         revealElements.forEach(el => el.classList.add('reveal'));
 
@@ -388,13 +388,98 @@
         cards.forEach(c => observer.observe(c));
     }
 
-    // ───── Product Cards: wishlist toggle ─────
+    // ───── Sound Engine (Web Audio API — no external files) ─────
+    const SoundEngine = (() => {
+        let _ctx = null;
+
+        function ctx() {
+            if (!_ctx) {
+                try { _ctx = new (window.AudioContext || window.webkitAudioContext)(); } catch (_) { }
+            }
+            // Resume if browser suspended it (autoplay policy)
+            if (_ctx && _ctx.state === 'suspended') _ctx.resume();
+            return _ctx;
+        }
+
+        function tone(ac, freq, type, t0, duration, peak) {
+            const osc = ac.createOscillator();
+            const gain = ac.createGain();
+            osc.connect(gain);
+            gain.connect(ac.destination);
+            osc.type = type;
+            osc.frequency.setValueAtTime(freq, t0);
+            gain.gain.setValueAtTime(0, t0);
+            gain.gain.linearRampToValueAtTime(peak, t0 + 0.012);
+            gain.gain.exponentialRampToValueAtTime(0.0001, t0 + duration);
+            osc.start(t0);
+            osc.stop(t0 + duration + 0.01);
+        }
+
+        // Dreamy three-note ascending chime — card image tap
+        function chime() {
+            const ac = ctx(); if (!ac) return;
+            const t = ac.currentTime;
+            tone(ac, 523.25, 'sine', t, 0.55, 0.10); // C5
+            tone(ac, 659.25, 'sine', t + 0.09, 0.50, 0.08); // E5
+            tone(ac, 783.99, 'sine', t + 0.18, 0.65, 0.07); // G5
+            // Subtle shimmer overtone
+            tone(ac, 1046.5, 'sine', t + 0.27, 0.55, 0.04); // C6
+        }
+
+        // Soft heart pop — wishlist toggle
+        function heartPop(saved) {
+            const ac = ctx(); if (!ac) return;
+            const t = ac.currentTime;
+            if (saved) {
+                // Ascending "in" pop
+                tone(ac, 440, 'sine', t, 0.18, 0.13);
+                tone(ac, 880, 'sine', t + 0.09, 0.32, 0.09);
+                tone(ac, 1320, 'triangle', t + 0.18, 0.28, 0.05);
+            } else {
+                // Descending "out" pop
+                tone(ac, 660, 'sine', t, 0.18, 0.09);
+                tone(ac, 440, 'sine', t + 0.09, 0.28, 0.06);
+            }
+        }
+
+        // Satisfying four-note purchase chime — Order Now
+        function orderChime() {
+            const ac = ctx(); if (!ac) return;
+            const t = ac.currentTime;
+            tone(ac, 523.25, 'sine', t, 0.40, 0.09); // C5
+            tone(ac, 659.25, 'sine', t + 0.07, 0.40, 0.09); // E5
+            tone(ac, 783.99, 'sine', t + 0.14, 0.40, 0.09); // G5
+            tone(ac, 1046.5, 'sine', t + 0.21, 0.70, 0.10); // C6 — long tail
+        }
+
+        return { chime, heartPop, orderChime };
+    })();
+
+    // ───── Product Cards: wishlist toggle + sounds ─────
     function setupProductCards() {
         const cards = $$('.product-card');
         if (!cards.length) return;
 
-        // Wishlist heart toggle
         cards.forEach(card => {
+            // ── Sound on image area click ──
+            const imgWrap = card.querySelector('.product-card__img');
+            if (imgWrap) {
+                imgWrap.style.cursor = 'pointer';
+                imgWrap.addEventListener('click', (e) => {
+                    // Don't fire if clicking wishlist button inside the img area
+                    if (e.target.closest('.product-card__wishlist')) return;
+                    SoundEngine.chime();
+                    // Ripple burst on the overlay
+                    const overlay = imgWrap.querySelector('.product-card__img-overlay');
+                    if (overlay) {
+                        overlay.style.transition = 'opacity 0.08s ease';
+                        overlay.style.opacity = '0.55';
+                        setTimeout(() => { overlay.style.opacity = ''; overlay.style.transition = ''; }, 180);
+                    }
+                });
+            }
+
+            // ── Wishlist heart toggle ──
             const btn = card.querySelector('.product-card__wishlist');
             if (!btn) return;
 
@@ -414,9 +499,105 @@
                 // Heartbeat pop animation
                 btn.style.transform = 'scale(1.35)';
                 setTimeout(() => { btn.style.transform = ''; }, 220);
+                SoundEngine.heartPop(saved);
                 try { sessionStorage.setItem(key, saved ? '1' : '0'); } catch (_) { }
             });
+
+            // ── Order Now button chime ──
+            const orderBtn = card.querySelector('.btn--primary');
+            if (orderBtn) {
+                orderBtn.addEventListener('click', () => SoundEngine.orderChime());
+            }
         });
+    }
+
+    // ───── Testimonials Slider ─────
+    function setupTestimonialsSlider() {
+        const slider = document.querySelector('.testimonials__slider');
+        if (!slider) return;
+
+        const track = slider.querySelector('.testimonials__track');
+        const cards = [...slider.querySelectorAll('.testimonial-card')];
+        const dotWrap = slider.querySelector('.testimonials__dots');
+        const prevBtn = slider.querySelector('.testimonials__btn--prev');
+        const nextBtn = slider.querySelector('.testimonials__btn--next');
+        if (!cards.length || !track) return;
+
+        let current = 0;
+        let autoTimer = null;
+        const AUTO_MS = 5500;
+
+        // Build dots
+        const dots = cards.map((_, i) => {
+            const dot = document.createElement('button');
+            dot.className = 'testimonials__dot' + (i === 0 ? ' is-active' : '');
+            dot.setAttribute('role', 'tab');
+            dot.setAttribute('aria-label', 'Go to testimonial ' + (i + 1));
+            dot.addEventListener('click', () => { goTo(i); resetAuto(); });
+            dotWrap.appendChild(dot);
+            return dot;
+        });
+
+        function goTo(index) {
+            cards[current].classList.remove('is-active');
+            cards[current].setAttribute('aria-hidden', 'true');
+            dots[current].classList.remove('is-active');
+
+            current = ((index % cards.length) + cards.length) % cards.length;
+
+            track.style.transform = 'translateX(' + -(current * 100) + '%)';
+
+            cards[current].classList.add('is-active');
+            cards[current].setAttribute('aria-hidden', 'false');
+            dots[current].classList.add('is-active');
+
+            // Re-fire star + verified animations for the active card
+            const el = cards[current];
+            const stars = el.querySelectorAll('.testimonial-card__star');
+            const verified = el.querySelector('.testimonial-card__verified');
+            stars.forEach(s => { s.style.cssText = 'transition:none;opacity:0;transform:scale(0.4) translateY(4px)'; });
+            if (verified) verified.style.cssText = 'transition:none;opacity:0;transform:scale(0.5)';
+            requestAnimationFrame(() => {
+                stars.forEach(s => { s.style.cssText = ''; });
+                if (verified) verified.style.cssText = '';
+                requestAnimationFrame(() => {
+                    stars.forEach(s => { s.style.opacity = '1'; s.style.transform = 'scale(1) translateY(0)'; });
+                    if (verified) { verified.style.opacity = '1'; verified.style.transform = 'scale(1)'; }
+                });
+            });
+        }
+
+        // Initialise first card
+        cards[0].classList.add('is-active');
+        cards[0].setAttribute('aria-hidden', 'false');
+
+        prevBtn.addEventListener('click', () => { goTo(current - 1); resetAuto(); });
+        nextBtn.addEventListener('click', () => { goTo(current + 1); resetAuto(); });
+
+        function startAuto() {
+            autoTimer = setInterval(() => goTo(current + 1), AUTO_MS);
+        }
+        function resetAuto() {
+            clearInterval(autoTimer);
+            startAuto();
+        }
+
+        // Touch/swipe support
+        let touchStartX = 0;
+        track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+        track.addEventListener('touchend', e => {
+            const dx = e.changedTouches[0].clientX - touchStartX;
+            if (Math.abs(dx) > 48) {
+                goTo(current + (dx < 0 ? 1 : -1));
+                resetAuto();
+            }
+        }, { passive: true });
+
+        // Pause auto-play when user hovers
+        slider.addEventListener('mouseenter', () => clearInterval(autoTimer));
+        slider.addEventListener('mouseleave', () => resetAuto());
+
+        startAuto();
     }
 
     // ───── FAQ Accordion ─────
@@ -493,6 +674,7 @@
         setupReveal();
         setupAboutCards();
         setupProductCards();
+        setupTestimonialsSlider();
         setupFaq();
         setupHeroSlider();
         setupRotatingText();
