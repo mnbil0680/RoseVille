@@ -366,6 +366,28 @@
     }
 
     // ───── Initialize ─────
+    // ───── About cards staggered entrance ─────
+    function setupAboutCards() {
+        const cards = $$('.about__card');
+        if (!cards.length) return;
+
+        if (!('IntersectionObserver' in window)) {
+            cards.forEach(c => c.classList.add('is-visible'));
+            return;
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        cards.forEach(c => observer.observe(c));
+    }
+
     function init() {
         // Restore language preference
         try {
@@ -376,6 +398,7 @@
         } catch (_) { }
 
         setupReveal();
+        setupAboutCards();
         setupHeroSlider();
         setupRotatingText();
         onScroll();
