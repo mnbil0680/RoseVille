@@ -3280,7 +3280,8 @@ html[dir="rtl"] .whatsapp-fab {
 .back-to-top {
   position: fixed;
   bottom: 1.5rem;
-  right: 5rem;
+  left: 1.5rem;
+  right: auto;
   width: 56px;
   height: 56px;
   background: var(--clr-white);
@@ -3299,8 +3300,8 @@ html[dir="rtl"] .whatsapp-fab {
 }
 
 html[dir="rtl"] .back-to-top {
-  right: auto;
-  left: 5rem;
+  right: 1.5rem;
+  left: auto;
 }
 
 .back-to-top.visible {
@@ -3757,6 +3758,7 @@ html[dir="rtl"] .back-to-top {
   /* back-to-top sits directly above WhatsApp FAB */
   .back-to-top {
     right: 1.25rem;
+    left: auto;
     bottom: 4.6rem;
   }
 
@@ -3984,6 +3986,7 @@ html[dir="rtl"] .back-to-top {
 
   .back-to-top {
     right: 1.1rem;
+    left: auto;
     bottom: 4.4rem;
     width: 48px;
     height: 48px;
